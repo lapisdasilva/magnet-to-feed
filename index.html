@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feed RSS de Magnet Links</title>
+</head>
+<body>
+    <h1>Feed RSS de Magnet Links</h1>
+    <ul id="feed"></ul>
+
+    <script>
+        fetch('magnet_links.txt')  // Substitua 'magnet_links.txt' pelo caminho real do seu arquivo de texto
+            .then(response => response.text())
+            .then(data => {
+                const lines = data.split('\n');
+                const feedList = document.getElementById('feed');
+
+                lines.forEach(line => {
+                    const [nome, magnetLink] = line.split('/;/');
+                    if (nome && magnetLink) {
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.textContent = nome;
+                        link.href = magnetLink;
+                        listItem.appendChild(link);
+                        feedList.appendChild(listItem);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao ler o arquivo de magnet links: ' + error);
+            });
+    </script>
+</body>
+</html>
