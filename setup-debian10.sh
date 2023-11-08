@@ -26,6 +26,6 @@ pip3 install beautifulsoup4
 pip3 install qbittorrent-api
 
 mkdir /var/www/html/rss
-cp criar_lista.py rotina_rss.sh index.html /var/www/rss/
+cp criar_lista.py rotina_rss.sh index.html /var/www/html/rss/
 
 echo "Script executado com sucesso!"
