@@ -4,30 +4,7 @@
     <title>Magnet to Feed - by lapisdasilva</title>
 </head>
 <body>
-    <h1>Lista de Arquivos na Pasta</h1>
-    <ul id="fileList"></ul>
-
-    <script>
-        // Função para listar os arquivos na pasta
-        function listFilesInDirectory() {
-            fetch('./') // O diretório atual
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const htmlDocument = parser.parseFromString(data, 'text/html');
-                    const files = Array.from(htmlDocument.querySelectorAll('a'));
-
-                    const fileList = document.getElementById('fileList');
-                    files.forEach(file => {
-                        const listItem = document.createElement('li');
-                        listItem.textContent = file.getAttribute('href');
-                        fileList.appendChild(listItem);
-                    });
-                })
-                .catch(error => console.error(error));
-        }
-
-        listFilesInDirectory();
-    </script>
+    <h1>Magnet to Feed - by lapisdasilva</h1>
+    <h2>Instalado com Sucesso!</h2>
 </body>
 </html>
