@@ -16,7 +16,7 @@ else
   echo "Ocorreu um erro ao baixar o feed RSS."
 fi
 
-python3 criarlista.py
+python3 criar_lista.py
 
 # Caminho para o arquivo magnet_links.txt
 ARQUIVO_TXT="magnet_links.txt"
